@@ -1,8 +1,10 @@
-import { Divide, House, Settings } from "lucide-react";
+import { House, Settings } from "lucide-react";
 import Background from "./components/Background";
 import Clock from "./components/Clock";
 import NavCard from "./components/NavCard";
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import SettingsModule from "./components/SettingsModule";
 
 function App() {
   const [settings, setSettings] = useState(false);
@@ -26,14 +28,31 @@ function App() {
         />
       )}
       <Background />
-      <div
-        className={`${settings && "animate-slideleftFade"} ${
-          (!settings && settingUsed) && "animate-slideright"
-        }`}
-      >
-        <Clock />
-        <NavCard />
-      </div>
+
+      <AnimatePresence>
+        {!settings ? (
+          <motion.div
+            key="main page"
+            initial={settingUsed ? { x: "-100%" } : {}}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Clock />
+            <NavCard />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="settings"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <SettingsModule />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
