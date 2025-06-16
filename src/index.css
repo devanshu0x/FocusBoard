@@ -4,6 +4,10 @@
 @theme{
   --font-space: "Space Mono", "monospace";
   --animate-twinkleAnimation: twinkle ease-in-out infinite alternate;
+  --animate-slideup: slide-up 0.5s;
+  --animate-slidedown: slide-down 0.5s;
+  --animate-slideleftFade: slide-left-fade 1.5s linear forwards;
+  --animate-slideright: slide-right 1.5s linear;
 
   @keyframes twinkle {
     0%, 100% {
@@ -15,4 +19,44 @@
       transform: scale(1.2);
     }
   }
+   @keyframes slide-up {
+    0%{
+      opacity:0.2;
+      transform: translateY(30%);
+    }
+    100%{
+      opacity:1;
+      transform: translateY(0%);
+      
+    }
+  }
+  @keyframes slide-down {
+    0%{
+      opacity:0.2;
+      transform: translateY(-30%);
+    }
+    100%{
+      opacity:1;
+      transform: translateY(0%);
+      
+    }
+  }
+
+  @keyframes slide-left-fade {
+    0%{
+      transform:translateX(0%);
+    }
+    100%{
+      transform:translateX(-100%);
+    }
+  }
+  @keyframes slide-right {
+    0%{
+      transform:translateX(-100%);
+    }
+    100%{
+      transform:translateX(0%);
+    }
+  }
+
 }

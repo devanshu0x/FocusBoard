@@ -42,7 +42,7 @@ function NavCard() {
   const showImage = true;
   const imgUrl ="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRodDNjeWVtb3RzcHRhb241cDNmem0zdTdmZDlpMXpscGJtOTFwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EgVqMDhLzHEI0/giphy.gif";
   return (
-    <div className="py-8 px-8">
+    <div className="py-8 px-8 animate-slideup">
       <div className="flex flex-col md:flex-row border border-[#d1d5db] p-2 rounded-lg max-w-64 sm:max-w-82 md:max-w-3xl mx-auto gap-2">
         {showImage && (
           <div className="h-42 md:h-64 md:w-64 ">
