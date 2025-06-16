@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 type Star = {
   id: number;
   size: number;
@@ -22,11 +24,14 @@ function generateStars(count: number): Star[] {
 
 export default function Background() {
   let starCount = 100;
-  const stars = generateStars(starCount);
+  const starRef= useRef<Star[] | null>(null);
+  if(starRef.current===null){
+    starRef.current= generateStars(starCount);
+  }
 
   return (
-    <div className=" absolute inset-0 bg-linear-to-br from-[#000000] via-[#09071a] to-[#140f23]">
-      {stars.map((e) => (
+    <div className="absolute inset-0 -z-999 bg-linear-to-br from-[#000000] via-[#09071a] to-[#140f23]">
+      {starRef.current.map((e) => (
         <div
           className="rounded-full absolute bg-white animate-twinkleAnimation"
           style={{

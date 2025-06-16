@@ -3,7 +3,7 @@
 
 @theme{
   --font-space: "Space Mono", "monospace";
-  --animate-twinkleAnimation: twinkle ease-in-out infinite;
+  --animate-twinkleAnimation: twinkle ease-in-out infinite alternate;
 
   @keyframes twinkle {
     0%, 100% {
