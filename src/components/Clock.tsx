@@ -26,7 +26,10 @@ function Clock() {
             <span className="text-slate-500">:</span>
             {format(date,"ss")}
         </div>
-        <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-slate-300 italic">"{quote}"</div>
+        {
+            quote!==""&&
+            <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-slate-300 italic">"{quote}"</div>
+        }
     </div>
   )
 }
