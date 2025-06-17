@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
+import { useConfigStore } from "../store/configStore";
 
 
 function Clock() {
@@ -14,7 +15,7 @@ function Clock() {
         }
     },[])
 
-    const message="Do not go gentle into that good night, Old age should burn and rave at close of day; Rage, rage against the dying of the light."
+    const quote=useConfigStore((state)=>state.quote);
 
   return (
     <div className="px-8 py-10 animate-slidedown">
@@ -25,7 +26,7 @@ function Clock() {
             <span className="text-slate-500">:</span>
             {format(date,"ss")}
         </div>
-        <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-slate-300 italic">"{message}"</div>
+        <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-slate-300 italic">"{quote}"</div>
     </div>
   )
 }

@@ -16,7 +16,7 @@ function App() {
           onClick={() => {
             setSettings((s) => !s);
           }}
-          className="absolute right-4 top-4 text-slate-300"
+          className="absolute right-4 top-4 text-slate-300 z-999"
         />
       ) : (
         <Settings
@@ -24,12 +24,12 @@ function App() {
             setSettings((s) => !s);
             setSettingUsed(true);
           }}
-          className="absolute right-4 top-4 text-slate-300 hover:rotate-45 transition-transform duration-300"
+          className="absolute right-4 top-4 text-slate-300 hover:rotate-45 transition-transform duration-300 z-999"
         />
       )}
       <Background />
 
-      <AnimatePresence>
+      <AnimatePresence >
         {!settings ? (
           <motion.div
             key="main page"
@@ -37,6 +37,7 @@ function App() {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 1, ease: "easeInOut" }}
+            className="absolute top-0 left-0 right-0"
           >
             <Clock />
             <NavCard />
@@ -48,6 +49,7 @@ function App() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 1, ease: "easeInOut" }}
+          
           >
             <SettingsModule />
           </motion.div>

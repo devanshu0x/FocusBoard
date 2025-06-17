@@ -1,4 +1,7 @@
 // Max size of links is 4
+
+import { useConfigStore } from "../store/configStore";
+
 // Max size of content is 7 
 const links = [
   {
@@ -38,9 +41,9 @@ const links = [
 ];
 
 function NavCard() {
-  const welcomeMessage = "Welcome Back Devanshu!";
-  const showImage = true;
-  const imgUrl ="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRodDNjeWVtb3RzcHRhb241cDNmem0zdTdmZDlpMXpscGJtOTFwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EgVqMDhLzHEI0/giphy.gif";
+  const welcomeMessage = useConfigStore((state)=>state.welcomeMessage);
+  const showImage = useConfigStore((state)=>state.showImage);
+  const imgUrl =useConfigStore((state)=>state.imageUrl);
   return (
     <div className="py-8 px-8 animate-slideup">
       <div className="flex flex-col md:flex-row border border-[#d1d5db] p-2 rounded-lg max-w-64 sm:max-w-82 md:max-w-3xl mx-auto gap-2">
