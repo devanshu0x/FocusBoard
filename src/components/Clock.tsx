@@ -19,16 +19,16 @@ function Clock() {
 
   return (
     <div className="px-8 py-10 animate-slidedown">
-        <div className="text-indigo-500 pb-2 text-center  text-3xl sm:text-4xl md:text-5xl">
+        <div className="text-accent pb-2 text-center  text-3xl sm:text-4xl md:text-5xl">
             {format(date,"HH")}
-            <span className="text-slate-500">:</span>
+            <span className="text-secondary">:</span>
             {format(date,"mm")}
-            <span className="text-slate-500">:</span>
+            <span className="text-secondary">:</span>
             {format(date,"ss")}
         </div>
         {
             quote!==""&&
-            <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-slate-300 italic">"{quote}"</div>
+            <div className="text-center mx-auto text-xs md:text-sm md:max-w-[60%] lg:text-md pt-3 font-extralight text-text italic">"{quote}"</div>
         }
     </div>
   )

@@ -1,24 +1,27 @@
-import { ChevronRight, House, ListTodo, Settings } from "lucide-react";
-import Background from "./components/Background";
+import { House, ListTodo, Moon, Settings, Sun } from "lucide-react";
+import BackgroundDark from "./components/BackgroundDark";
 import Clock from "./components/Clock";
 import NavCard from "./components/NavCard";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import SettingsModule from "./components/SettingsModule";
 import TaskBoard from "./components/TaskBoard";
+import BackgroundLight from "./components/BackgroundLight";
 
 function App() {
   const [settings, setSettings] = useState<boolean>(false);
   const [settingUsed, setSettingUsed] = useState<boolean>(false);
   const [showTasksBar, setShowTaskBar] = useState<boolean>(false);
+  const [lightTheme,setLightTheme]=useState<boolean>(false);
   return (
-    <div className="font-space text-white">
+    <div className={` font-space text-primary ${lightTheme? "light":"dark"} `}>
+      {/* Settings */}
       {settings ? (
         <House
           onClick={() => {
             setSettings((s) => !s);
           }}
-          className="absolute right-4 top-4 text-slate-300 z-999"
+          className="absolute text-secondary right-4 top-4 z-999"
         />
       ) : (
         <Settings
@@ -26,11 +29,18 @@ function App() {
             setSettings((s) => !s);
             setSettingUsed(true);
           }}
-          className="absolute right-4 top-4 text-slate-300 hover:rotate-45 transition-transform duration-300 z-999"
+          className="absolute right-4 top-4 text-secondary hover:rotate-45 transition-transform duration-300 z-999 animate-popout"
         />
       )}
-      <Background />
-
+      {/* Light dark theme switcher */}
+      {
+        lightTheme? <Moon onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute top-4 text-secondary right-14"/>: <Sun onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute text-secondary top-4 right-14"/>
+      }
+      {/* Background */}
+      {
+        lightTheme? <BackgroundLight/>: <BackgroundDark/>
+      }
+      {/* Page content */}
       <AnimatePresence>
         {!settings ? (
           <motion.div
@@ -46,7 +56,7 @@ function App() {
             {!showTasksBar && (
               <ListTodo
                 onClick={() => setShowTaskBar(true)}
-                className="absolute top-4 left-4 z-999"
+                className="absolute top-4 left-4 z-999 animate-popout"
               />
             )}
             <TaskBoard show={showTasksBar} onCancel={()=>setShowTaskBar(false)} />

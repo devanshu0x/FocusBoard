@@ -46,7 +46,7 @@ function NavCard() {
   const imgUrl =useConfigStore((state)=>state.imageUrl);
   return (
     <div className="py-8 px-8 animate-slideup">
-      <div className="flex flex-col md:flex-row border border-[#d1d5db] p-2 rounded-lg max-w-64 sm:max-w-82 md:max-w-3xl mx-auto gap-2">
+      <div className="flex flex-col md:flex-row border border-[#d1d5db] bg-background/20 backdrop-blur-sm p-2 rounded-lg max-w-64 sm:max-w-82 md:max-w-3xl mx-auto gap-2">
         {showImage && (
           <div className="h-42 md:h-64 md:w-64 ">
             <img

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useMemo, } from "react";
 
 type Star = {
   id: number;
@@ -22,16 +22,12 @@ function generateStars(count: number): Star[] {
   });
 }
 
-export default function Background() {
+export default function BackgroundDark() {
   let starCount = 100;
-  const starRef= useRef<Star[] | null>(null);
-  if(starRef.current===null){
-    starRef.current= generateStars(starCount);
-  }
-
+  const stars=useMemo(()=>generateStars(starCount),[]);
   return (
     <div className="absolute inset-0 -z-999 bg-linear-to-br from-[#000000] via-[#09071a] to-[#140f23]">
-      {starRef.current.map((e) => (
+      {stars.map((e) => (
         <div
           className="rounded-full absolute bg-white animate-twinkleAnimation"
           style={{

@@ -1,13 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
-@theme{
+@theme inline{
   --font-space: "Space Mono", "monospace";
+  --font-audiowide: "Audiowide", "sans-serif";
   --animate-twinkleAnimation: twinkle ease-in-out infinite alternate;
   --animate-slideup: slide-up 0.5s;
   --animate-slidedown: slide-down 0.5s;
-  --animate-slideleftFade: slide-left-fade 1.5s ease-out forwards;
-  --animate-slideright: slide-right 1.5s ease-out;
+  --animate-popout: pop-out 1s;
+
+  /* Colors */
+  
+  --color-theme: rgb(var(--theme));
+  --color-primary: rgb(var(--primary));
+  --color-secondary: rgb(var(--secondary));
+  --color-accent: rgb(var(--accent));
+  --color-background: rgb(var(--background));
+  --color-text: rgb(var(--text));
+
+  /* keyframes */
 
   @keyframes twinkle {
     0%, 100% {
@@ -42,21 +53,32 @@
     }
   }
 
-  @keyframes slide-left-fade {
+  @keyframes pop-out {
     0%{
-      transform:translateX(0%);
+      opacity: 0;
     }
     100%{
-      transform:translateX(-100%);
+      opacity: 1;
     }
-  }
-  @keyframes slide-right {
-    0%{
-      transform:translateX(-100%);
-    }
-    100%{
-      transform:translateX(0%);
-    }
-  }
-
+  } 
 }
+
+
+
+.light {
+  --theme: 236 254 255;           /* soft aqua surface */
+  --primary: 0 188 212;           /* cyan-500 */
+  --secondary: 128 222 234;       /* cyan-300 */
+  --accent: 0 151 167;            /* cyan-700 */
+  --background: 178 235 242;      /* cyan-100 */
+  --text: 1 55 70;                /* cyan-900 */
+
+.dark {
+  --theme: 20 15 35;             /* base background (matches your #140f23) */
+  --primary: 129 140 248;        /* indigo-400: vibrant but soft blueish */
+  --secondary: 165 180 252;      /* indigo-300: lighter tone for contrast */
+  --accent: 99 102 241;          /* indigo-500: bright accent */
+  --background: 5 6 45;          /* very dark navy */
+  --text: 224 231 255;           /* indigo-100: pale text on dark bg */
+}
+
