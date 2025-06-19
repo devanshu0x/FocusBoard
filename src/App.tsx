@@ -14,14 +14,14 @@ function App() {
   const [showTasksBar, setShowTaskBar] = useState<boolean>(false);
   const [lightTheme,setLightTheme]=useState<boolean>(false);
   return (
-    <div className={` font-space text-primary ${lightTheme? "light":"dark"} `}>
+    <div className={` font-space tracking-wide text-primary ${lightTheme? "light":"dark"} `}>
       {/* Settings */}
       {settings ? (
         <House
           onClick={() => {
             setSettings((s) => !s);
           }}
-          className="absolute text-secondary right-4 top-4 z-999"
+          className="absolute text-accent right-4 top-4 z-999 hover:text-primary cursor-pointer transition-colors duration-200"
         />
       ) : (
         <Settings
@@ -29,12 +29,12 @@ function App() {
             setSettings((s) => !s);
             setSettingUsed(true);
           }}
-          className="absolute right-4 top-4 text-secondary hover:rotate-45 transition-transform duration-300 z-999 animate-popout"
+          className="absolute right-4 top-4 text-accent hover:text-primary cursor-pointer transition-all hover:rotate-45  duration-300 z-999 animate-popout"
         />
       )}
       {/* Light dark theme switcher */}
       {
-        lightTheme? <Moon onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute top-4 text-secondary right-14"/>: <Sun onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute text-secondary top-4 right-14"/>
+        lightTheme? <Moon onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute top-4 text-accent hover:text-primary cursor-pointer transition-colors duration-200 right-14"/>: <Sun onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute text-accent hover:text-primary cursor-pointer transition-colors duration-200 top-4 right-14"/>
       }
       {/* Background */}
       {
@@ -56,7 +56,7 @@ function App() {
             {!showTasksBar && (
               <ListTodo
                 onClick={() => setShowTaskBar(true)}
-                className="absolute top-4 left-4 z-999 animate-popout"
+                className="text-accent hover:text-primary cursor-pointer transition-colors duration-200 stroke-2 absolute top-4 left-4 z-999 animate-popout"
               />
             )}
             <TaskBoard show={showTasksBar} onCancel={()=>setShowTaskBar(false)} />

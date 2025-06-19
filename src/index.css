@@ -17,6 +17,7 @@
   --color-accent: rgb(var(--accent));
   --color-background: rgb(var(--background));
   --color-text: rgb(var(--text));
+  --color-border: rgb(var(--border));
 
   /* keyframes */
 
@@ -64,21 +65,28 @@
 }
 
 
-
 .light {
-  --theme: 236 254 255;           /* soft aqua surface */
-  --primary: 0 188 212;           /* cyan-500 */
-  --secondary: 128 222 234;       /* cyan-300 */
-  --accent: 0 151 167;            /* cyan-700 */
-  --background: 178 235 242;      /* cyan-100 */
-  --text: 1 55 70;                /* cyan-900 */
+--primary: 255 244 117;        /* Vibrant citrus yellow */
+--secondary: 255 235 190;    /* Light creamy yellow */
+--accent: 0 160 232;          /* Cool cyan pop */
+--text: 44 38 24;
+--border: 240 225 190;
+--background: 240 256 250;
+
+}
+
+
+
+
 
 .dark {
-  --theme: 20 15 35;             /* base background (matches your #140f23) */
-  --primary: 129 140 248;        /* indigo-400: vibrant but soft blueish */
-  --secondary: 165 180 252;      /* indigo-300: lighter tone for contrast */
-  --accent: 99 102 241;          /* indigo-500: bright accent */
-  --background: 5 6 45;          /* very dark navy */
-  --text: 224 231 255;           /* indigo-100: pale text on dark bg */
-}
+ --theme: 12 16 28;
+--primary: 120 180 255;        /* Cooler icy-blue */
+--secondary: 144 176 224;
+--accent: 0 229 255;           /* Arctic cyan */
+--background: 2 3 6;
+--text: 235 245 255;
+--border: 55 65 90;
+
+} 
 

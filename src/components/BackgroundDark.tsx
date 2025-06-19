@@ -29,6 +29,7 @@ export default function BackgroundDark() {
     <div className="absolute inset-0 -z-999 bg-linear-to-br from-[#000000] via-[#09071a] to-[#140f23]">
       {stars.map((e) => (
         <div
+        key={e.id}
           className="rounded-full absolute bg-white animate-twinkleAnimation"
           style={{
             width: e.size,

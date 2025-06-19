@@ -9,9 +9,9 @@ type Input={
 function InputBox({field, value, onChange}:Input) {
   return (
     <div>
-        <div className="p-2 text-[#f1fa8c]">{field}</div>
+        <div className="p-2 text-primary">{field}</div>
         <div>
-            <input value={value} onChange={(e)=>onChange(e.target.value)} className="w-full px-4 py-2 bg-black/50 border border-[#50fa7b] text-[#8be9fd] rounded-lg focus:outline-none focus:border-[#8be9fd]"></input>
+            <input value={value} onChange={(e)=>onChange(e.target.value)} className="w-full px-4 py-2 bg-primary/20 border border-border text-text rounded-lg focus:outline-none focus:border-accent"></input>
         </div>
     </div>
   )
