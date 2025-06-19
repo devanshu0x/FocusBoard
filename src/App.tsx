@@ -12,9 +12,13 @@ function App() {
   const [settings, setSettings] = useState<boolean>(false);
   const [settingUsed, setSettingUsed] = useState<boolean>(false);
   const [showTasksBar, setShowTaskBar] = useState<boolean>(false);
-  const [lightTheme,setLightTheme]=useState<boolean>(false);
+  const [lightTheme, setLightTheme] = useState<boolean>(false);
   return (
-    <div className={` font-space tracking-wide text-primary ${lightTheme? "light":"dark"} `}>
+    <div
+      className={` font-space tracking-wide text-primary ${
+        lightTheme ? "light" : "dark"
+      } `}
+    >
       {/* Settings */}
       {settings ? (
         <House
@@ -33,13 +37,19 @@ function App() {
         />
       )}
       {/* Light dark theme switcher */}
-      {
-        lightTheme? <Moon onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute top-4 text-accent hover:text-primary cursor-pointer transition-colors duration-200 right-14"/>: <Sun onClick={()=>setLightTheme(s=>!s)} className="z-999 absolute text-accent hover:text-primary cursor-pointer transition-colors duration-200 top-4 right-14"/>
-      }
+      {lightTheme ? (
+        <Moon
+          onClick={() => setLightTheme((s) => !s)}
+          className="z-999 absolute top-4 text-accent hover:text-primary cursor-pointer transition-colors duration-200 right-14 animate-popout"
+        />
+      ) : (
+        <Sun
+          onClick={() => setLightTheme((s) => !s)}
+          className="z-999 absolute text-accent hover:text-primary cursor-pointer transition-colors duration-200 top-4 right-14 animate-popout"
+        />
+      )}
       {/* Background */}
-      {
-        lightTheme? <BackgroundLight/>: <BackgroundDark/>
-      }
+      {lightTheme ? <BackgroundLight /> : <BackgroundDark />}
       {/* Page content */}
       <AnimatePresence>
         {!settings ? (
@@ -59,7 +69,10 @@ function App() {
                 className="text-accent hover:text-primary cursor-pointer transition-colors duration-200 stroke-2 absolute top-4 left-4 z-999 animate-popout"
               />
             )}
-            <TaskBoard show={showTasksBar} onCancel={()=>setShowTaskBar(false)} />
+            <TaskBoard
+              show={showTasksBar}
+              onCancel={() => setShowTaskBar(false)}
+            />
           </motion.div>
         ) : (
           <motion.div

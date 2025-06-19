@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 
 function SettingsModule() {
   const links = useConfigStore((state) => state.links);
-  const groupCount = useConfigStore((state) => state.groupsCount);
+  const groupCount = links.length;
   const [newGroupName, setNewGroupName] = useState("");
   const showImage = useConfigStore((state) => state.showImage);
   const addGroup = useConfigStore((state) => state.addGroup);
@@ -45,7 +45,9 @@ function SettingsModule() {
         <div className="flex rounded-lg my-4 border-b group focus-within:border-accent border-border">
           <input
             disabled={groupCount >= 4}
-            placeholder="Add Group..."
+            placeholder={
+              groupCount >= 4 ? "Max 4 groups allowed" : "Add Group..."
+            }
             value={newGroupName}
             onChange={(e) => setNewGroupName(e.target.value)}
             onKeyDown={(e) => {
