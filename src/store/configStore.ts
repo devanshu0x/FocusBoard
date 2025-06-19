@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
 interface LinkContent {
@@ -72,7 +73,7 @@ const initialLinks = [
 ];
 
 export const useConfigStore = create<ConfigStore>()(
-  immer((set) => ({
+  persist(immer((set) => ({
     imageUrl:
       "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnRodDNjeWVtb3RzcHRhb241cDNmem0zdTdmZDlpMXpscGJtOTFwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EgVqMDhLzHEI0/giphy.gif",
     quote:
@@ -150,5 +151,7 @@ export const useConfigStore = create<ConfigStore>()(
         state.showImage=!state.showImage;
       });
     },
-  }))
+  })),{
+    name:"config-storage"
+  })
 );

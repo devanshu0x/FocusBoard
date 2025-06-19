@@ -44,10 +44,12 @@ function TaskBoard({ onCancel, show }: InputType) {
                       isCompleted:false,
                       startDate:new Date()
                     })
+                    setDescription("");
                   }
                 }
               }
               value={description}
+              placeholder="Add Task..."
               onChange={(e)=>setDescription(e.target.value)}
               className="text-text w-full px-4 py-2 bg-secondary rounded-l-sm focus:outline-none focus:border-b-2 border-border"></input>
               <div className="bg-accent w-12 rounded-r-sm group-focus-within:border-b-2 border-border flex justify-center items-center ">
