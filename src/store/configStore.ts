@@ -19,7 +19,9 @@ interface ConfigStore {
   quote: string;
   welcomeMessage: string;
   showImage: boolean;
+  lightTheme:boolean;
   links: GroupContent[];
+  toggleTheme: ()=>void;
   changeLinkName: (groupId:string,linkId:string,name:string)=>void;
   changeLinkWeb: (groupId:string,linkId:string,web:string)=>void;
   addLink:(groupId:string, link:LinkContent)=>void;
@@ -80,7 +82,13 @@ export const useConfigStore = create<ConfigStore>()(
       "Do not go gentle into that good night, Old age should burn and rave at close of day; Rage, rage against the dying of the light.",
     welcomeMessage: "Welcome Back Anon!",
     showImage: true,
+    lightTheme:false,
     links: initialLinks,
+    toggleTheme: ()=>{
+      set((state)=>{
+        state.lightTheme=!state.lightTheme;
+      })
+    },
     changeLinkName: (groupId,linkId,name)=>{
       set((state)=>{
         const group=state.links.find((e)=>e.id===groupId);

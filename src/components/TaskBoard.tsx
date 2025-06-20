@@ -88,7 +88,7 @@ function Item({ item }: { item: Task }) {
   const delayedTask = !isSameDay(item.startDate);
   return (
     <div
-      className={`rounded-sm  py-2 my-2 grid grid-cols-12 text-text ${
+      className={`rounded-sm  py-2 my-2 grid grid-cols-12 text-text animate-popout ${
         item.isCompleted
           ? "bg-green-400"
           : delayedTask

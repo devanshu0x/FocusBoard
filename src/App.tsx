@@ -7,12 +7,14 @@ import { AnimatePresence, motion } from "motion/react";
 import SettingsModule from "./components/SettingsModule";
 import TaskBoard from "./components/TaskBoard";
 import BackgroundLight from "./components/BackgroundLight";
+import { useConfigStore } from "./store/configStore";
 
 function App() {
   const [settings, setSettings] = useState<boolean>(false);
   const [settingUsed, setSettingUsed] = useState<boolean>(false);
   const [showTasksBar, setShowTaskBar] = useState<boolean>(false);
-  const [lightTheme, setLightTheme] = useState<boolean>(false);
+  const lightTheme=useConfigStore((state)=>state.lightTheme);
+  const toggleTheme= useConfigStore((state)=>state.toggleTheme);
   return (
     <div
       className={` font-inter tracking-wide text-primary ${
@@ -39,12 +41,12 @@ function App() {
       {/* Light dark theme switcher */}
       {lightTheme ? (
         <Moon
-          onClick={() => setLightTheme((s) => !s)}
+          onClick={() =>toggleTheme() }
           className="z-999 absolute top-4 text-accent hover:text-primary cursor-pointer transition-colors duration-200 right-14 animate-popout"
         />
       ) : (
         <Sun
-          onClick={() => setLightTheme((s) => !s)}
+          onClick={() =>toggleTheme()}
           className="z-999 absolute text-accent hover:text-primary cursor-pointer transition-colors duration-200 top-4 right-14 animate-popout"
         />
       )}
