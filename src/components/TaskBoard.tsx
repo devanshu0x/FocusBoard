@@ -34,7 +34,7 @@ function TaskBoard({ onCancel, show }: InputType) {
             className="text-accent hover:text-primary transition-colors duration-300 absolute top-4 left-4"
           />
 
-          <div className="bg-secondary/50 p-4 border shadow-lg shadow-primary min-h-104 max-h-[80vh] max-w-92 rounded-lg overflow-y-scroll">
+          <div className="bg-secondary/50 p-4 border  shadow-primary min-h-104 max-h-[80vh] w-74 sm:w-92 rounded-lg overflow-y-scroll">
             <div className="flex group">
               <input
                 onKeyDown={(e) => {
@@ -58,8 +58,17 @@ function TaskBoard({ onCancel, show }: InputType) {
               </div>
             </div>
             {tasks.map((item) => (
-              <Item item={item} />
+              <Item key={item.id} item={item} />
             ))}
+          </div>
+          <div className="text-xs text-text-secondary absolute bottom-5 text-center ">
+            <div>
+              Note: Completed Tasks will be automatically removed on the next
+              day(00:00 Hrs)
+            </div>
+            <div>
+              Note: Incompleted Tasks will persist and will be marked red
+            </div>
           </div>
         </motion.div>
       )}

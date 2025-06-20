@@ -28,7 +28,7 @@ function NavCard() {
             {links.map((e) => (
               <div
                 key={e.id}
-                className="text-center p-1 text-sm md:text-[0.95rem]"
+                className=" p-1 text-sm md:text-[0.95rem]"
               >
                 <span className="text-accent font-bold">{e.group}</span>
                 <ul>

@@ -8,6 +8,7 @@ import SettingsModule from "./components/SettingsModule";
 import TaskBoard from "./components/TaskBoard";
 import BackgroundLight from "./components/BackgroundLight";
 import { useConfigStore } from "./store/configStore";
+import GithubFooter from "./components/GithubFooter";
 
 function App() {
   const [settings, setSettings] = useState<boolean>(false);
@@ -88,6 +89,7 @@ function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <GithubFooter/>
     </div>
   );
 }

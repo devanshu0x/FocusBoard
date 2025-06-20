@@ -2,19 +2,31 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
-const initialTasks = [
+const initialTasks: Task[] = [
   {
     id: "1",
-    description: "Go to gym",
+    description: "drink water",
     isCompleted: false,
     startDate: new Date(),
   },
   {
     id: "2",
-    description: "Solve 18 problems",
-    isCompleted: false,
+    description: "get a new startpage",
+    isCompleted: true,
     startDate: new Date(),
   },
+  {
+    id:"3",
+    description:"touch grass",
+    isCompleted:false,
+    startDate: new Date("2020-01-01")
+  },
+  {
+    id:"4",
+    description:"get a job",
+    isCompleted:false,
+    startDate: new Date("2020-01-01")
+  }
 ];
 
 function isSameDay(date1: Date) {
