@@ -49,7 +49,7 @@ function Group({ group }: GroupInput) {
           )}
           <Trash2
             onClick={() => deleteGroup(group.id)}
-            className="h-4 md:h-5 text-red-500 hover:text-red-700 transition-colors duration-300"
+            className="h-4 md:h-5 text-red-500 hover:text-red-700 transition-colors duration-300 cursor-pointer"
           />
         </div>
       </div>
@@ -137,7 +137,7 @@ function Item({ item, groupId }: { item: Shortcut; groupId: string }) {
       <div className="col-span-1 flex justify-center items-center">
         <Trash2
           onClick={() => deleteLink(groupId, item.id)}
-          className="h-4 md:h-5 text-red-500 hover:text-red-700 transition-colors duration-300"
+          className="h-4 md:h-5 text-red-500 hover:text-red-700 transition-colors duration-300 cursor-pointer"
         />
       </div>
     </div>

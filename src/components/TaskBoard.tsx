@@ -31,7 +31,7 @@ function TaskBoard({ onCancel, show }: InputType) {
         >
           <X
             onClick={onCancel}
-            className="text-accent hover:text-primary transition-colors duration-300 absolute top-4 left-4"
+            className="cursor-pointer text-accent hover:text-primary transition-colors duration-300 absolute top-4 left-4"
           />
 
           <div className="bg-secondary/50 p-4 border  shadow-primary min-h-104 max-h-[80vh] w-74 sm:w-92 rounded-lg overflow-y-scroll">
@@ -137,7 +137,7 @@ function Item({ item }: { item: Task }) {
         <div className="col-span-1 flex justify-between items-center">
           <Trash2
             onClick={() => deleteTask(item.id)}
-            className="h-4 md:h-5 text-red-600 hover:text-red-800 transition-colors duration-300"
+            className="h-4 md:h-5 text-red-600 hover:text-red-800 transition-colors duration-300 cursor-pointer"
           />
         </div>
       </div>
