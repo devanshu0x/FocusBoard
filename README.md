@@ -1,54 +1,17 @@
-# React + TypeScript + Vite
+# focusboard
+A simple startpage for your browser to optimize browsing experience
+***
+![Image](https://github.com/user-attachments/assets/6f9ca766-e707-4cb1-9ce6-83f61032a4ec)
+![Image](https://github.com/user-attachments/assets/3e1f5d56-71f4-468a-a6c4-84fbdb84a23c)
+![Image](https://github.com/user-attachments/assets/d2020812-868d-4d25-badb-a69f8b3d6f61)
+![Image](https://github.com/user-attachments/assets/d377b1fc-578a-4da4-bda3-269afa102853)
+*** 
+### Try it
+You can give it a try [focusboard](https://focusboard-sigma.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### How to make it default startpage
+- You can add it as your default homepage from browser settings
+- For overriding new tabs you can use an extension
+- For chromium based browser use [this](https://chromewebstore.google.com/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)
+- For firefox based browser use [this](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
+  
