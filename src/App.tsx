@@ -15,7 +15,7 @@ function App() {
   const [lightTheme, setLightTheme] = useState<boolean>(false);
   return (
     <div
-      className={` font-space tracking-wide text-primary ${
+      className={` font-inter tracking-wide text-primary ${
         lightTheme ? "light" : "dark"
       } `}
     >

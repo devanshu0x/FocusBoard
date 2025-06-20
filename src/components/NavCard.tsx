@@ -21,7 +21,7 @@ function NavCard() {
           </div>
         )}
         <div className=" flex-grow min-h-48">
-          <div className="text-sm md:text-lg font-bold text-center pb-1 text-primary">
+          <div className="text-sm md:text-lg font-bold text-center pb-1 text-text-secondary">
             {welcomeMessage}
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4">

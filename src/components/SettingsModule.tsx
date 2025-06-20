@@ -22,14 +22,14 @@ function SettingsModule() {
           value={useConfigStore((state) => state.imageUrl)}
           onChange={useConfigStore((store) => store.changeImageUrl)}
         />
-        <label className="flex gap-2 my-2 text-sm items-center">
+        <label className="flex gap-2 my-2 text-text text-sm items-center">
           <div
             onClick={useConfigStore((state) => state.toggleImage)}
             className="h-4 w-4 border rounded-sm flex items-center justify-center"
           >
-            {showImage && <Check className="text-primary font-bold" />}
+            {showImage && <Check className="text-text font-bold" />}
           </div>
-          <div className="text-primary">Show Image</div>
+          <div className="text-text">Show Image</div>
         </label>
         <InputBox
           field="Quote"
@@ -42,7 +42,7 @@ function SettingsModule() {
           onChange={useConfigStore((state) => state.changeWelcomeMessage)}
         />
         {/* Add Group*/}
-        <div className="flex rounded-lg my-4 border-b group focus-within:border-accent border-border">
+        <div className="flex rounded-lg my-4 border-b group focus-within:border-accent border-primary">
           <input
             disabled={groupCount >= 4}
             placeholder={
@@ -61,10 +61,10 @@ function SettingsModule() {
               }
             }}
             type="text"
-            className="px-4 py-2 text-text bg-primary/20 w-full rounded-l-lg focus:outline-0"
+            className="px-4 py-2 text-text-secondary bg-primary/30 w-full rounded-l-lg focus:outline-0"
           ></input>
           <div className="w-12 bg-secondary group-focus-within:bg-primary rounded-r-lg flex justify-center items-center">
-            <ArrowRight className="text-accent/70" />
+            <ArrowRight className="text-text/80" />
           </div>
         </div>
         {/* Groups */}

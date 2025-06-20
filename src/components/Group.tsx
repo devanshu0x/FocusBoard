@@ -38,7 +38,7 @@ function Group({ group }: GroupInput) {
     <div className="">
       <div
         onClick={() => setDropdownOpen((s) => !s)}
-        className="flex justify-between bg-primary/30 px-4 py-2 rounded-lg"
+        className="flex text-text justify-between bg-primary/30 px-4 py-2 rounded-lg"
       >
         {group.group}
         <div className="flex gap-2 items-center]">
@@ -58,14 +58,14 @@ function Group({ group }: GroupInput) {
           <Item key={item.id} groupId={group.id} item={item} />
         ))}
       {dropdownOpen && (
-        <div className="my-2 bg-secondary/50 border boder-border rounded-lg px-4 py-2 ">
+        <div className="my-2 bg-secondary/50 border border-text-secondary/80 rounded-lg px-4 py-2 ">
           <div className="text-text text-center mb-2">Add</div>
           <div className="gap-1 grid md:grid-cols-2">
             <input
               type="text"
               disabled={groupSize >= 6}
               placeholder={groupSize >= 6 ? "Max 6 allowed" : "name"}
-              className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-primary"
+              className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-text/80"
               value={newWebName}
               onChange={(e) => setNewWebName(e.target.value)}
             />
@@ -73,7 +73,7 @@ function Group({ group }: GroupInput) {
               type="text"
               disabled={groupSize >= 6}
               placeholder={groupSize >= 6 ? "Max 6 allowed" : "url"}
-              className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-primary"
+              className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-text/80"
               value={newWebUrl}
               onChange={(e) => setNewWebUrl(e.target.value)}
             />
@@ -114,17 +114,17 @@ function Item({ item, groupId }: { item: Shortcut; groupId: string }) {
   const changeLinkWeb= useConfigStore((state)=>state.changeLinkWeb);
   const deleteLink = useConfigStore((state) => state.deleteLink);
   return (
-    <div className="grid grid-cols-12 my-2 bg-secondary/30 border boder-border rounded-lg px-4 py-2">
+    <div className="grid grid-cols-12 my-2 bg-primary/50 border boder-border rounded-lg px-2 py-2">
       <div className="col-span-11  gap-1 grid md:grid-cols-2">
         <input
           type="text"
-          className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-primary"
+          className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text-secondary border-text/80"
           value={item.name}
           onChange={(e)=>changeLinkName(groupId,item.id,e.target.value)}
         />
         <input
           type="text"
-          className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text border-primary"
+          className="mx-4 px-2 py-1 border rounded-sm focus:outline-none text-text-secondary border-text/80"
           value={item.web}
           onChange={(e)=>{
             const value=e.target.value;

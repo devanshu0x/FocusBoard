@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme inline{
-  --font-space: "Space Mono", "monospace";
-  --font-audiowide: "Audiowide", "sans-serif";
+  --font-inter: "Inter", "sans-serif";
   --animate-twinkleAnimation: twinkle ease-in-out infinite alternate;
   --animate-slideup: slide-up 0.5s;
   --animate-slidedown: slide-down 0.5s;
@@ -17,6 +16,7 @@
   --color-accent: rgb(var(--accent));
   --color-background: rgb(var(--background));
   --color-text: rgb(var(--text));
+  --color-text-secondary: rgb(var(--text-secondary));
   --color-border: rgb(var(--border));
 
   /* keyframes */
@@ -70,6 +70,7 @@
 --secondary: 255 235 190;    /* Light creamy yellow */
 --accent: 0 160 232;          /* Cool cyan pop */
 --text: 44 38 24;
+--text-secondary: 100 90 60;
 --border: 240 225 190;
 --background: 240 256 250;
 
@@ -80,12 +81,12 @@
 
 
 .dark {
- --theme: 12 16 28;
 --primary: 120 180 255;        /* Cooler icy-blue */
 --secondary: 144 176 224;
 --accent: 0 229 255;           /* Arctic cyan */
 --background: 2 3 6;
 --text: 235 245 255;
+--text-secondary: 170 190 210;
 --border: 55 65 90;
 
 } 
