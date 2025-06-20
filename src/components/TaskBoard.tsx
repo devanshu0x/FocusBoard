@@ -53,7 +53,20 @@ function TaskBoard({ onCancel, show }: InputType) {
                 onChange={(e) => setDescription(e.target.value)}
                 className="text-text w-full px-4 py-2 bg-secondary rounded-l-sm focus:outline-none focus:border-b-2 border-accent"
               ></input>
-              <div className="bg-accent w-12 rounded-r-sm group-focus-within:border-b-2 border-accent flex justify-center items-center ">
+              <div
+                onClick={() => {
+                  if (description != "") {
+                    addTask({
+                      id: nanoid(),
+                      description: description,
+                      isCompleted: false,
+                      startDate: new Date(),
+                    });
+                    setDescription("");
+                  }
+                }}
+                className="cursor-pointer bg-accent w-12 rounded-r-sm group-focus-within:border-b-2 border-accent flex justify-center items-center "
+              >
                 <ArrowRight />
               </div>
             </div>

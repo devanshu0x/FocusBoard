@@ -63,7 +63,19 @@ function SettingsModule() {
             type="text"
             className="px-4 py-2 text-text-secondary bg-primary/30 w-full rounded-l-lg focus:outline-0"
           ></input>
-          <div className="w-12 bg-secondary group-focus-within:bg-primary rounded-r-lg flex justify-center items-center">
+          <div
+            onClick={() => {
+              if (newGroupName != "") {
+                addGroup({
+                  id: nanoid(),
+                  group: newGroupName,
+                  content: [],
+                });
+                setNewGroupName("");
+              }
+            }}
+            className="cursor-pointer w-12 bg-secondary group-focus-within:bg-primary rounded-r-lg flex justify-center items-center"
+          >
             <ArrowRight className="text-text/80" />
           </div>
         </div>
